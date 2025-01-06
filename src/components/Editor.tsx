@@ -1,18 +1,16 @@
+import CodeTool from '@editorjs/code';
 import EditorJS, { ToolConstructable } from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import EditorjsList from "@editorjs/list";
 import Table from '@editorjs/table';
-import CodeTool from '@editorjs/code';
 import { useEffect, useRef } from "react";
 
-export function Editor() {
+export function Editor(editorData:{blocks:[]}) {
   const editorRef = useRef<EditorJS | null>(null);
 
   const initEditor = () => {
     const editor = new EditorJS({
-      data:{
-        blocks:[]
-      },
+      data:editorData,
       holder: "editorjs",
       placeholder: "Write your notes",
       tools: {
@@ -54,5 +52,5 @@ export function Editor() {
     };
   }, []);
 
-  return <article className="prose lg:prose-xl"><div className="editorjs text-white" id="editorjs"></div></article>;
+  return <article className="prose lg:prose-xl z-10"><div className="editorjs text-white" id="editorjs"></div></article>;
 }

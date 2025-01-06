@@ -1,6 +1,6 @@
 import React from "react";
-import { IVideos } from "../screens/Homescreen";
 import CloseButton from "../assets/CloseButton";
+import { IVideos } from "../screens/PlaylistScreen";
 
 export default function Sidebar({videos,selectedVideo,setSelectedVideo,setShowSidebar}:{videos:IVideos[],selectedVideo:number,setSelectedVideo:React.Dispatch<React.SetStateAction<number>>,setShowSidebar:React.Dispatch<React.SetStateAction<boolean>>}) {
   return (
